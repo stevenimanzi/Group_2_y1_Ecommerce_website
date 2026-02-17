@@ -11,14 +11,21 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">Year1<span>Eco</span></div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About Class</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="login.html" class="btn-login">Login</a></li>
-            <li><a href="signup.html" class="btn-signup">Join Class</a></li>
-        </ul>
+    <div class="logo">Year1<span>Eco</span></div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Class</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="login.html" class="btn-login">Login</a></li>
+        <li><a href="signup.html" class="btn-signup">Join Class</a></li>
+    </ul>
     </nav>
 
     <header class="hero">
@@ -32,7 +39,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800" alt="Tech Students">
+            <img src="images/PXL_20251205_095950761.MP.jpg" alt="Tech Students">
         </div>
     </header>
 
@@ -106,6 +113,18 @@
             <p>&copy; 2026 Year 1 Eco . Developed by <strong>Group 2</strong>.</p>
         </div>
     </footer>
+<script>
+    const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.nav-links');
 
+menu.addEventListener('click', function() {
+    menu.classList.toggle('is-active');
+    menuLinks.classList.toggle('active');
+});
+document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+    menu.classList.remove('is-active');
+    menuLinks.classList.remove('active');
+}));
+</script>
 </body>
 </html>
