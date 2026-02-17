@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Gallery | Year One E-Commerce</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Year1<span>Eco</span></div>
+            <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Overview</span></a></li>
+                <li><a href="announcements.html"><i class="fas fa-bullhorn"></i> <span>Announcements</span></a></li>
+                <li><a href="chat.html"><i class="fas fa-comments"></i> <span>Chat Rooms</span></a></li>
+                <li class="active"><a href="gallery.html"><i class="fas fa-image"></i> <span>Gallery</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="btn-logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <div class="header-title">
+                <h1>Class Gallery</h1>
+                <p>Memories from Year One E-Commerce</p>
+            </div>
+        </header>
+
+        <section class="gallery-showcase">
+            <div class="card gallery-card">
+                <div class="gallery-container">
+                    <img id="gallery-img" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=1000" alt="Class Gallery">
+                </div>
+                <div class="gallery-info">
+                    <h3>Featured Highlights</h3>
+                    <p>Capturing our journey at RP Musanze College.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const images = [
+            "images/IMG-20260212-WA0004.jpg",
+            "images/PXL_20251205_095950761.MP.jpg",
+            "images/PXL_20251205_100531118.PORTRAIT.jpg",
+            "images/PXL_20251205_100717487.PORTRAIT.jpg",
+            "images/DSC_0067.JPG"
+        ];
+        
+        let currentIndex = 0;
+
+        const changeImage = () => {
+            const imgElement = document.getElementById('gallery-img');
+            imgElement.style.opacity = 0; 
+
+            setTimeout(() => {
+                currentIndex = (currentIndex + 1) % images.length;
+                imgElement.src = images[currentIndex];
+                imgElement.style.opacity = 1;
+            }, 500);
+
+            setTimeout(changeImage, 3500); 
+        };
+        changeImage();
+        const sidebar = document.getElementById('sidebar');
+        document.getElementById('menuToggle').addEventListener('click', () => sidebar.classList.add('active'));
+        document.getElementById('menuClose').addEventListener('click', () => sidebar.classList.remove('active'));
+    </script>
+</body>
+</html>

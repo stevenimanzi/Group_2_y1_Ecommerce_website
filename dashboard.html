@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Year One E-Commerce</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Year1<span>Eco</span></div>
+            <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a href="#"><i class="fas fa-th-large"></i> <span>Overview</span></a></li>
+                <li><a href="announcements.html"><i class="fas fa-bullhorn"></i> <span>Announcements</span></a></li>
+                <li><a href="chat.html"><i class="fas fa-comments"></i> <span>Chat Rooms</span></a></li>
+                <li><a href="gallery.html"><i class="fas fa-image"></i> <span>Gallery</span></a></li>
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="user-profile">
+                <img src="https://ui-avatars.com/api/?name=Group+2&background=2563eb&color=fff" alt="Profile">
+                <div class="user-info">
+                    <p class="name">Group 2</p>
+                    <p class="role">Students</p>
+                </div>
+            </div>
+            <a href="index.html" class="btn-logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+    <header class="content-header">
+        <div class="header-title">
+            <span class="welcome-badge">Welcome back, Steven</span>
+            <h1>Class Overview</h1>
+            <p><i class="fas fa-university"></i> RP Musanze College | Year One E-Commerce</p>
+        </div>
+        <div class="header-actions">
+            <button class="btn-icon" title="Notifications">
+                <i class="fas fa-bell"></i>
+                <span class="dot"></span>
+            </button>
+            <button class="btn-primary-premium">
+                <i class="fas fa-plus"></i> <span>New Post</span>
+            </button>
+        </div>
+    </header>
+
+    <section class="dashboard-grid">
+        
+        <div class="card premium-card announcement-card">
+            <div class="card-header">
+                <div class="header-left">
+                    <div class="icon-box-blue"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Latest Announcements</h3>
+                </div>
+                <a href="#" class="view-all-link">View All</a>
+            </div>
+            <div class="announcement-list">
+                <div class="item">
+                    <div class="date-chip">16 Feb</div>
+                    <div class="item-body">
+                        <strong>Assignment Due</strong>
+                        <p>E-Commerce Delivery submission portal closes tonight at 23:59.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="date-chip">14 Feb</div>
+                    <div class="item-body">
+                        <strong>Class Meeting</strong>
+                        <p>Meeting in New Main Hall regarding the upcoming group projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card premium-card chat-preview-card">
+            <div class="card-header">
+                <div class="header-left">
+                    <div class="icon-box-green"><i class="fas fa-comments"></i></div>
+                    <h3>Active Chats</h3>
+                </div>
+            </div>
+            <div class="chat-rooms">
+                <div class="room-pill">
+                    <div class="room-icon"><i class="fas fa-hashtag"></i></div>
+                    <div class="room-details">
+                        <h4>General Discussion</h4>
+                        <div class="status-indicator">
+                            <span class="online-dot"></span>
+                            <p>12 students online</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+                
+                <div class="room-pill">
+                    <div class="room-icon"><i class="fas fa-code"></i></div>
+                    <div class="room-details">
+                        <h4>Web Dev Group</h4>
+                        <div class="status-indicator">
+                            <span class="online-dot"></span>
+                            <p>4 students online</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <script>
+        const sidebar = document.getElementById('sidebar');
+        const openBtn = document.getElementById('menuToggle');
+        const closeBtn = document.getElementById('menuClose');
+
+        openBtn.addEventListener('click', () => sidebar.classList.add('active'));
+        closeBtn.addEventListener('click', () => sidebar.classList.remove('active'));
+    </script>
+
+</body>
+</html>

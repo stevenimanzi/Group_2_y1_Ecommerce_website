@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Rooms | Year One E-Commerce</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Year1<span>Eco</span></div>
+            <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Overview</span></a></li>
+                <li><a href="announcements.html"><i class="fas fa-bullhorn"></i> <span>Announcements</span></a></li>
+                <li class="active"><a href="chat.html"><i class="fas fa-comments"></i> <span>Chat Rooms</span></a></li>
+                <li><a href="gallery.html"><i class="fas fa-image"></i> <span>Gallery</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="btn-logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content chat-main">
+        <div class="chat-container card premium-card">
+            <div class="channels-sidebar">
+                <div class="channels-header">
+                    <h3>Messages</h3>
+                </div>
+                <div class="channels-list">
+                    <div class="channel-item active">
+                        <div class="channel-icon">#</div>
+                        <div class="channel-info">
+                            <h4>General Discussion</h4>
+                            <p>Steven: Working on CSS...</p>
+                        </div>
+                    </div>
+                    <div class="channel-item">
+                        <div class="channel-icon"><i class="fas fa-laptop-code"></i></div>
+                        <div class="channel-info">
+                            <h4>Web Dev Project</h4>
+                            <p>Aime: Check the logo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message-area">
+                <div class="message-header">
+                    <div class="header-left">
+                        <h4># General Discussion</h4>
+                        <span class="online-count">12 students online</span>
+                    </div>
+                </div>
+
+                <div class="message-list" id="messageList">
+                    <div class="message received">
+                        <img src="https://ui-avatars.com/api/?name=Daniel&background=random" alt="User">
+                        <div class="msg-content">
+                            <span class="sender">Daniel GASANA</span>
+                            <p>Has anyone finished the E-Commerce assignment?</p>
+                            <span class="time">10:45 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="msg-content">
+                            <p>Almost done with the UI part!</p>
+                            <span class="time">10:46 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="message-input" id="chatForm">
+                    <input type="text" id="msgInput" placeholder="Type your message here..." autocomplete="off">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>

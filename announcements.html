@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements | Year One E-Commerce</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Year1<span>Eco</span></div>
+            <button class="menu-close" id="menuClose"><i class="fas fa-times"></i></button>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-th-large"></i> <span>Overview</span></a></li>
+                <li class="active"><a href="announcements.html"><i class="fas fa-bullhorn"></i> <span>Announcements</span></a></li>
+                <li><a href="chat.html"><i class="fas fa-comments"></i> <span>Chat Rooms</span></a></li>
+                <li><a href="gallery.html"><i class="fas fa-image"></i> <span>Gallery</span></a></li>
+            </ul>
+        </nav>
+        <div class="sidebar-footer">
+            <a href="index.html" class="btn-logout"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="content-header">
+            <div class="header-title">
+                <h1>Class Announcements</h1>
+                <p>Stay updated with the latest from RP Musanze</p>
+            </div>
+            <div class="header-actions">
+                <button class="btn-primary-premium" id="openModal">
+                    <i class="fas fa-plus"></i> <span>Create Post</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="filter-bar">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search announcements...">
+            </div>
+        </div>
+
+        <section class="announcements-feed" id="announcementFeed">
+            <article class="card premium-card post">
+                <div class="post-header">
+                    <div class="author-info">
+                        <img src="https://ui-avatars.com/api/?name=Class+Rep&background=2563eb&color=fff" alt="Rep">
+                        <div>
+                            <h4>Class Representative</h4>
+                            <span>16 Feb 2026 • 10:30 AM</span>
+                        </div>
+                    </div>
+                    <span class="tag-urgent">Urgent</span>
+                </div>
+                <div class="post-body">
+                    <h3>Assignment Submission: E-Commerce Delivery</h3>
+                    <p>This is a reminder to all Year One E-Commerce students. The portal for LU 1: LOAD AND TRANSPORT ITEMS will be closing tonight. Ensure all files are in PDF format.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>New Announcement</h3>
+                <button id="closeModal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="postForm">
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" id="postTitle" placeholder="What's happening?" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea id="postMessage" rows="5" placeholder="Details go here..." required></textarea>
+                </div>
+                <button type="submit" class="btn-auth">Post Announcement</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/announcements.js"></script>
+</body>
+</html>
